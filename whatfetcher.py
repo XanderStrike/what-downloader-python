@@ -1,6 +1,5 @@
 import sys
 
-# if sys.argv[1]
 if (len(sys.argv) != 3):
   print "Run with 'python whatfetcher.py USERNAME PASSWORD'"
   sys.exit()
@@ -10,6 +9,7 @@ import os
 
 br = mechanize.Browser()
 
+# Spoof Headers
 br.addheaders = [('User-agent', 'Firefox')]
 br.set_handle_robots(False)
 
@@ -22,7 +22,7 @@ control = br.form.find_control("password")
 control.value = sys.argv[2]
 br.submit()
 
-# Find New Torrents
+# Download New Torrents
 br.open('https://what.cd/torrents.php')
 for link in br.links():
   if (link.text == 'DL'):
