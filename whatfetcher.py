@@ -1,3 +1,11 @@
+# Whatfetcher
+#  alex standke
+#  october 2014
+#
+# Fetches the most recent torrents in your default torrent view page.
+#
+# Run with 'python whatfetcher.py USERNAME PASSWORD'
+
 import sys
 
 if (len(sys.argv) != 3):
